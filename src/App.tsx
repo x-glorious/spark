@@ -14,7 +14,7 @@ fetch(api('hello'), {
   },
 })
 
-fetch(api('api/brief'), {
+fetch(api('user/brief'), {
   credentials: 'include',
   method: 'GET',
   headers: {
