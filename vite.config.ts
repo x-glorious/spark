@@ -13,7 +13,13 @@ export default defineConfig({
     },
   },
   server: {
-    port: 22333
+    port: 22333,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true
+      },
+    }
   },
   plugins: [react()],
 })
