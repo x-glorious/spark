@@ -1,7 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { oauth, OauthPlatform } from '@/services/oauth'
+import { api } from './utils/server'
+
+fetch(api('hello'), {
+  credentials: 'include',
+  method: 'GET',
+  headers: {
+    "Content-Type": "application/json",
+    // 'Content-Type': 'application/x-www-form-urlencoded',
+  },
+})
+
+fetch(api('api/brief'), {
+  credentials: 'include',
+  method: 'GET',
+  headers: {
+    "Content-Type": "application/json",
+    // 'Content-Type': 'application/x-www-form-urlencoded',
+  },
+}).then(blob => blob.json()).then(e => console.error(e))
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,6 +29,7 @@ function App() {
   return (
     <>
       <div>
+        <button onClick={() => oauth(OauthPlatform.github)}>test</button>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
