@@ -21,7 +21,7 @@ fetch(api('api/brief'), {
     "Content-Type": "application/json",
     // 'Content-Type': 'application/x-www-form-urlencoded',
   },
-})
+}).then(blob => blob.json()).then(e => console.error(e))
 
 function App() {
   const [count, setCount] = useState(0)
