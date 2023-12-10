@@ -1,5 +1,5 @@
 import { getEnv } from '@/utils/env'
-import { api, host } from '@/utils/server'
+import { host } from '@/utils/server'
 
 export enum OauthPlatform {
   github = 'github'
