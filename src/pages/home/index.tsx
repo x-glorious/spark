@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { oauth, OauthPlatform } from '@/services/oauth'
 import { api } from '@/utils/server'
 import { useNavigate } from 'react-router-dom'
@@ -23,7 +22,6 @@ fetch(api('user/brief'), {
 }).then(blob => blob.json()).then(e => console.error(e))
 
 export const Home = () => {
-  const [count, setCount] = useState(0)
   const navigate = useNavigate()
 
   return (
