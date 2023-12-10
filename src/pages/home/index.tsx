@@ -8,26 +8,20 @@ export const Home = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch(api('hello'), {
-      credentials: 'include',
-      method: 'GET',
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    })
+    try {
+      fetch(api('user/brief'), {
+        credentials: 'include',
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Authorization': localStorage.getItem(StorageKey.authToken) || '',
+        },
+      })
+    } catch (e) {
+      console.error(e)
+    }
+  }, [])
 
-    fetch(api('user/brief'), {
-      credentials: 'include',
-      method: 'GET',
-      headers: {
-        "Content-Type": "application/json",
-        "X-Authorization": localStorage.getItem(StorageKey.authToken) || ''
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    }).then(blob => blob.json()).then(e => console.error(e))
-
-  },[])
   return (
     <>
       <div>
