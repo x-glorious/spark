@@ -9,7 +9,7 @@ export const Home = () => {
 
   useEffect(() => {
     try {
-      fetch(api('user/brief'), {
+      fetch(api('user/detail'), {
         credentials: 'include',
         method: 'GET',
         headers: {
