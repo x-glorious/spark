@@ -1,5 +1,5 @@
-import { StorageKey } from '@/utils/storage'
 import { useEffect } from 'react'
+import { StorageKey } from '@/utils/storage'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 
 export const UserLogin = () => {
@@ -16,5 +16,5 @@ export const UserLogin = () => {
     }
   }, [searchParams, navigate])
 
-  return <div>login</div>
+  return <></>
 }
