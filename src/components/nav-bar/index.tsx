@@ -1,6 +1,8 @@
-import { Box, Divider, Flex, Text } from '@chakra-ui/react'
+import { Box, Divider, Flex } from '@chakra-ui/react'
 import { AppIcon } from '@/components/app-icon'
 import { useLocation } from 'react-router-dom'
+import { SloganEn } from '@/assets/texts/slogan-en'
+import { SloganCn } from '@/assets/texts/slogan-cn'
 
 export const NavBar = () => {
   const location = useLocation()
@@ -15,10 +17,11 @@ export const NavBar = () => {
       <Flex height="100%" alignItems="center" h={16} px={4} py={4}>
         <Flex alignItems="center" gap={1}>
           <AppIcon />
-          <Text fontSize="2xl" fontWeight="bold">
-            Spark sea
-          </Text>
+          <Box h={7} color="purple.800">
+            <SloganEn />
+          </Box>
         </Flex>
+        <Flex flex={1} justifyContent="flex-end"></Flex>
       </Flex>
       <Divider />
     </>
