@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { WebglController } from './webgl'
 import { Box } from '@chakra-ui/react'
 import Style from './index.module.scss'

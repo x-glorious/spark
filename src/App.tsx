@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
-import { Box, ChakraProvider, Flex } from '@chakra-ui/react'
+import { Box, ChakraProvider } from '@chakra-ui/react'
 import { NavBar } from '@/components/nav-bar'
 import { theme } from './theme'
 import { routes } from './routes'

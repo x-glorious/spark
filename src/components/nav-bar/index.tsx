@@ -2,7 +2,7 @@ import { Box, Divider, Flex } from '@chakra-ui/react'
 import { AppIcon } from '@/components/app-icon'
 import { useLocation } from 'react-router-dom'
 import { SloganEn } from '@/assets/texts/slogan-en'
-import { SloganCn } from '@/assets/texts/slogan-cn'
+// import { SloganCn } from '@/assets/texts/slogan-cn'
 
 export const NavBar = () => {
   const location = useLocation()

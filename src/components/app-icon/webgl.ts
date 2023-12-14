@@ -11,7 +11,6 @@ export class WebglController
   implements WebglControllerAbstract
 {
   private last!: number
-  private modal!: THREE.Group
   private total: number = 0
   private readonly circle: THREE.Mesh
 
