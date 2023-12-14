@@ -1,7 +1,6 @@
 import { oauth, OauthPlatform } from '@/services/oauth'
-import { api } from '@/utils/server'
+import { server } from '@/utils/server'
 import { useNavigate } from 'react-router-dom'
-import { StorageKey } from '@/utils/storage'
 import { useEffect } from 'react'
 
 export const Home = () => {
@@ -9,13 +8,8 @@ export const Home = () => {
 
   useEffect(() => {
     try {
-      fetch(api('user/detail'), {
-        credentials: 'include',
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Authorization': localStorage.getItem(StorageKey.authToken) || '',
-        },
+      server.get('user/detail').then((e) => {
+        console.error(e)
       })
     } catch (e) {
       console.error(e)
