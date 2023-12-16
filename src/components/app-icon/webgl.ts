@@ -4,7 +4,6 @@ import {
 } from '@/webgl/controller'
 import * as THREE from 'three'
 import { ParametricGeometry } from 'three/addons/geometries/ParametricGeometry.js'
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 
 export class WebglController
   extends WebglControllerBase
@@ -17,9 +16,6 @@ export class WebglController
   constructor(element: HTMLCanvasElement) {
     super(element)
     this.context = this.createContext()
-
-    const controls = new OrbitControls(this.context.camera, this.element)
-    controls.target.set(0, 0, 0)
 
     this.circle = this.generateCircle()
 

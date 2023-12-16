@@ -21,6 +21,7 @@ export const oauth = (platform: OauthPlatform) => {
         prompt: 'consent',
         client_id: getEnv().VITE_OAUTH_GITHUB_CLIENT_ID,
         redirect_uri: getRedirectUrl(OauthPlatform.github),
+        scope: 'user:email',
       }),
   }
 

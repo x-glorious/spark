@@ -8,6 +8,9 @@ export const host =
     : 'https://spark-serverless.vercel.app'
 
 export const server = Axios.create({
+  headers: {
+    'Cache-Control': 'no-cache',
+  },
   baseURL: `${
     // for dev proxy
     getEnv().MODE === RuntimeEnv.dev ? location.origin : host
