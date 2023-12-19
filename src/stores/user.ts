@@ -14,6 +14,7 @@ export interface Detail {
 export interface DetailStore {
   value?: Detail
   loaded: boolean
+  loading: boolean
   load: () => Promise<void>
 }
 
@@ -21,7 +22,10 @@ export const useDetailStore = create<DetailStore>()(
   devtools(
     (set) => ({
       loaded: false,
+      loading: false,
       load: async () => {
+        set(() => ({ loading: true }))
+
         try {
           const { status, data } = await server.get<Detail>('user/detail')
           if (status === 200) {
@@ -31,6 +35,7 @@ export const useDetailStore = create<DetailStore>()(
           // default
         }
 
+        set(() => ({ loading: false }))
         set(() => ({ loaded: true }))
       },
     }),

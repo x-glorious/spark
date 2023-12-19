@@ -1,10 +1,10 @@
 import { Routes } from 'react-router-dom'
-import { user } from './user'
 import { home } from './home'
+import { oauth } from './oauth'
 
 export const routes = (
   <Routes>
     {home}
-    {user}
+    {oauth}
   </Routes>
 )

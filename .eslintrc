@@ -4,7 +4,7 @@
     "es6": true,
     "node": true
   },
-  "plugins": ["prettier", "react"],
+  "plugins": ["prettier", "react", "formatjs"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -14,6 +14,7 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
+    "formatjs/no-offset": "error",
     "prettier/prettier": [
       "error",
       {

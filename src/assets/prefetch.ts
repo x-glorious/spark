@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid'
-import BgLoginModal from '@/assets/backgrounds/login-modal-bg.png'
+import LoginIllustration from '@/assets/backgrounds/oauth/login/illustration.png'
 
 interface PrefetchDetail {
   url: string
@@ -28,7 +28,7 @@ const addPrefetchLink = (detail: PrefetchDetail) => {
 const globalConfigList: PrefetchDetail[] = [
   {
     id: nanoid(),
-    url: BgLoginModal,
+    url: LoginIllustration,
     loaded: false,
   },
 ]

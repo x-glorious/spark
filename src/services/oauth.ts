@@ -10,7 +10,6 @@ export const oauth = (platform: OauthPlatform) => {
   const getRedirectUrl = (platform: OauthPlatform) => {
     return `${host}/api/oauth/redirect?${Qs.stringify({
       platform,
-      back_to: location.href.replace(location.origin, ''),
     })}`
   }
 

@@ -8,8 +8,8 @@ import { prefetch } from '@/assets/prefetch'
 export const useInit = () => {
   const location = useLocation()
 
-  const [loaded, load] = useDetailStore(
-    useShallow((state) => [state.loaded, state.load]),
+  const [loaded, load, loading] = useDetailStore(
+    useShallow((state) => [state.loaded, state.load, state.loading]),
   )
   const fontLoadFinished = useFont()
 
@@ -18,11 +18,11 @@ export const useInit = () => {
   }, [])
 
   useEffect(() => {
-    // login page do not execute user detail fetch
-    if (location.pathname !== '/user/login') {
+    // oauth callback page do not execute user detail fetch
+    if (location.pathname !== '/oauth/callback' && !loading && !loaded) {
       load()
     }
-  }, [location, load])
+  }, [location, load, loading, loaded])
 
   return useMemo(() => {
     return loaded && fontLoadFinished

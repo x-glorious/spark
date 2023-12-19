@@ -1,5 +1,5 @@
-// import { SloganCn } from '@/assets/texts/slogan-cn'
-import { SloganEn } from '@/assets/texts/slogan-en'
+import { useIntlFc } from '@/hooks/use-intl-fc'
+import { i18nDefine } from '@/i18n/define'
 import { Box } from '@chakra-ui/layout'
 
 export interface SloganProps {
@@ -15,10 +15,11 @@ export interface SloganProps {
 
 export const Slogan = (props: SloganProps) => {
   const { color = 'purple.800', size } = props
+  const Slogan = useIntlFc(i18nDefine.basic.slogan)
+
   return (
     <Box h={size} color={color}>
-      <SloganEn />
-      {/* <SloganCn /> */}
+      <Slogan />
     </Box>
   )
 }

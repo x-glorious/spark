@@ -1,15 +1,18 @@
-import { useRef } from 'react'
 import { Button, Divider, Flex } from '@chakra-ui/react'
 import { AppIcon } from '@/components/app-icon'
-import { LoginModal, LoginModalRef } from '@/components/login-modal'
 import { Slogan } from '@/components/slogan'
 import { useDetailStore } from '@/stores/user'
 import { LuLogIn } from 'react-icons/lu'
 import { Avatar } from './avatar'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export const NavBar = () => {
   const user = useDetailStore((state) => state.value)
-  const loginModalRef = useRef<LoginModalRef | null>(null)
+  const location = useLocation()
+  const navigate = useNavigate()
+  if (['/oauth/login'].includes(location.pathname)) {
+    return null
+  }
 
   return (
     <>
@@ -26,7 +29,7 @@ export const NavBar = () => {
               variant="outline"
               size="sm"
               leftIcon={<LuLogIn />}
-              onClick={() => loginModalRef.current?.open()}
+              onClick={() => navigate('/oauth/login')}
             >
               Login
             </Button>
@@ -34,7 +37,6 @@ export const NavBar = () => {
         </Flex>
       </Flex>
       <Divider />
-      <LoginModal ref={loginModalRef} />
     </>
   )
 }
