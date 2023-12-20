@@ -5,6 +5,7 @@ import { useShallow } from 'zustand/react/shallow'
 import {
   Avatar as AvatarComponent,
   Box,
+  Button,
   Divider,
   Flex,
   Icon,
@@ -26,13 +27,24 @@ export const Avatar = () => {
   return (
     <Popover placement="bottom-end">
       <PopoverTrigger>
-        <AvatarComponent
-          cursor="pointer"
-          size="sm"
-          name={user?.name}
-          bg="purple.100"
-          src={user?.avatar}
-        />
+        <Button
+          p={0}
+          outline="none"
+          minW={0}
+          minH={0}
+          height="fit-content"
+          borderRadius="100%"
+          background="transparent"
+        >
+          <AvatarComponent
+            cursor="pointer"
+            size="sm"
+            fontWeight="bold"
+            name={user?.name}
+            bg="purple.100"
+            src={user?.avatar}
+          />
+        </Button>
       </PopoverTrigger>
       <PopoverContent
         // overwrite blue focus box shadow

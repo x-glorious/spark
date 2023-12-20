@@ -5,6 +5,7 @@ import { useDetailStore } from '@/stores/user'
 import { LuLogIn } from 'react-icons/lu'
 import { Avatar } from './avatar'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { Language } from './language'
 
 export const NavBar = () => {
   const user = useDetailStore((state) => state.value)
@@ -21,7 +22,8 @@ export const NavBar = () => {
           <AppIcon size={10} />
           <Slogan size={6} />
         </Flex>
-        <Flex flex={1} justifyContent="flex-end">
+        <Flex flex={1} justifyContent="flex-end" alignItems="center" gap={4}>
+          <Language />
           {user ? (
             <Avatar />
           ) : (

@@ -60,7 +60,8 @@ export const OauthLogin = () => {
               size="lg"
               isDisabled
               leftIcon={<FaGoogle />}
-              colorScheme="pink"
+              colorScheme="blackAlpha"
+              borderRadius="xl"
             >
               Google
             </Button>
@@ -71,6 +72,7 @@ export const OauthLogin = () => {
             mt={4}
             isLoading={disposingPlatform === OauthPlatform.github}
             leftIcon={<FaGithub />}
+            borderRadius="xl"
             onClick={() => {
               setDisposingPlatform(OauthPlatform.github)
               login(OauthPlatform.github)
