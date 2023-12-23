@@ -1,5 +1,7 @@
-import { Button, Divider, Flex } from '@chakra-ui/react'
+import { Button, Divider, Flex, Icon, IconButton } from '@chakra-ui/react'
 import { AppIcon } from '@/components/app-icon'
+import { BsBookHalf } from 'react-icons/bs'
+import { PiCampfireFill } from 'react-icons/pi'
 import { Slogan } from '@/components/slogan'
 import { useDetailStore } from '@/stores/user'
 import { Avatar } from './avatar'
@@ -32,7 +34,21 @@ export const NavBar = () => {
           <AppIcon size={10} />
           <Slogan size={6} onClick={toHome} cursor="pointer" />
         </Flex>
-        <Flex flex={1} justifyContent="flex-end" alignItems="center" gap={4}>
+        <Flex flex={1} gap={2} justifyContent="center" alignItems="center">
+          <IconButton
+            size="sm"
+            aria-label="inspiration"
+            fontSize="lg"
+            icon={<Icon as={PiCampfireFill} />}
+          />
+          <IconButton
+            size="sm"
+            colorScheme="orange"
+            aria-label="novel"
+            icon={<Icon as={BsBookHalf} />}
+          />
+        </Flex>
+        <Flex alignItems="center" gap={4}>
           <Language />
           {user ? (
             <Avatar />
