@@ -7,11 +7,14 @@ import { Avatar } from './avatar'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Language } from './language'
 import { useCallback } from 'react'
+import { useIntl } from 'react-intl'
+import { i18nDefine } from '@/i18n/define'
 
 export const NavBar = () => {
   const user = useDetailStore((state) => state.value)
   const location = useLocation()
   const navigate = useNavigate()
+  const intl = useIntl()
 
   const toHome = useCallback(() => {
     if (location.pathname !== '/') {
@@ -41,7 +44,7 @@ export const NavBar = () => {
               leftIcon={<LuLogIn />}
               onClick={() => navigate('/oauth/login')}
             >
-              Login
+              {intl.formatMessage(i18nDefine.basic.login)}
             </Button>
           )}
         </Flex>

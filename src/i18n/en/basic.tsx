@@ -5,4 +5,5 @@ import { basic } from '@/i18n/define/basic'
 export const basicLang: Lang = {
   [basic.slogan.id]: SloganEn,
   [basic.aphorisms.id]: 'Gather sand into piles, gather spirits to form a sea',
+  [basic.login.id]: 'Login',
 }

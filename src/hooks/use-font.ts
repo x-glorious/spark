@@ -7,11 +7,11 @@ export const useFont = () => {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ['Nunito'],
+        families: ['Nunito', 'Ma+Shan+Zheng'],
       },
       active: () => {
         setFinished(true)
-        document.body.setAttribute('font-en-valid', 'true')
+        document.body.setAttribute('font-valid', 'true')
       },
       inactive: () => setFinished(true),
     })

@@ -4,6 +4,7 @@ const basic = autoSetIds(
   {
     slogan: undefined as unknown as Descriptor,
     aphorisms: undefined as unknown as Descriptor,
+    login: undefined as unknown as Descriptor,
   },
   'basic',
 )

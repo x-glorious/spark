@@ -3,7 +3,7 @@ body {
 
   font-family: $safe-font-family;
 
-  &[font-en-valid=true]{
-    font-family: 'Nunito', $safe-font-family;
+  &[font-valid=true]{
+    font-family: 'Nunito', 'Ma Shan Zheng', $safe-font-family;
   }
 }
