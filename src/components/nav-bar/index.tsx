@@ -2,7 +2,6 @@ import { Button, Divider, Flex } from '@chakra-ui/react'
 import { AppIcon } from '@/components/app-icon'
 import { Slogan } from '@/components/slogan'
 import { useDetailStore } from '@/stores/user'
-import { LuLogIn } from 'react-icons/lu'
 import { Avatar } from './avatar'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Language } from './language'
@@ -41,7 +40,6 @@ export const NavBar = () => {
             <Button
               variant="outline"
               size="sm"
-              leftIcon={<LuLogIn />}
               onClick={() => navigate('/oauth/login')}
             >
               {intl.formatMessage(i18nDefine.basic.login)}

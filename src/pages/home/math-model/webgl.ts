@@ -111,7 +111,7 @@ export class WebglController
    * 3D Rose Curve
    * @param time 经过的时间
    */
-  private particleAnimation = (time: number, delta: number) => {
+  private particleAnimation = (time: number) => {
     const n = 6
     time = time * 0.0006
     const scale = 4
@@ -149,7 +149,7 @@ export class WebglController
     this.total += delta
     this.last = now
 
-    this.particleAnimation(this.total, delta)
+    this.particleAnimation(this.total)
     this.context.renderer.render(this.context.scene, this.context.camera)
 
     this.requestAnimationHandler = requestAnimationFrame(this.render)
